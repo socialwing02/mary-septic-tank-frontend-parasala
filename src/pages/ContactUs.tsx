@@ -16,11 +16,11 @@ import { PHONE_LABEL } from "../constants";
 
 // Business location
 const BUSINESS_ADDRESS =
-  "TVM Road, Under Bridge, Near Parvathipuram Bus Stop, Parvathipuram";
+  " Trivandrum – Nagercoil Highway, Idichakkapalamoodu, Parassala, Kerala – 695508"
+
 
 const MAPS_URL =
-  "https://www.google.com/maps/place/MARY+SEPTIC+TANK+CLEANING/@8.1901547,77.4001926,17z/data=!3m1!4b1!4m6!3m5!1s0x3b04f138efa16fa3:0x349e5887e52ad583!8m2!3d8.1901547!4d77.4001926!16s%2Fg%2F11nr0bvy07?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D"
-
+  "https://www.google.com/maps/place/MARY+SEPTIC+TANK+CLEANING/@8.1901547,77.4001926,17z/data=!3m1!4b1!4m6!3m5!1s0x3b04f138efa16fa3:0x349e5887e52ad583!8m2!3d8.1901547!4d77.4001926!16s%2Fg%2F11nr0bvy07?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D";
 
 // Contact cards
 const contactCards = [
@@ -202,7 +202,7 @@ export default function ContactUs() {
                   <div>
                     <p className="text-xs text-white/50">Talk to our team</p>
                     <p className="mt-1 font-bold text-white">
-                      +91 {PHONE_LABEL}
+                       {PHONE_LABEL}
                     </p>
                   </div>
                 </div>
@@ -311,7 +311,7 @@ export default function ContactUs() {
         >
 
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.1250647335632!2d77.39761767573381!3d8.190154691841503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04f138efa16fa3%3A0x349e5887e52ad583!2sMARY%20SEPTIC%20TANK%20CLEANING!5e0!3m2!1sen!2sin!4v1794034020892!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252687.60699889896!2d77.07037730902206!3d8.278510876327562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05ab560e283b11%3A0xf1751ad59c29a2a0!2sMARY%20SEPTIC%20TANK%20CLEANING%20SERVIES!5e0!3m2!1sen!2sin!4v1794038231190!5m2!1sen!2sin"
             className="h-[350px] w-full sm:h-[450px]"
             allowFullScreen
             loading="lazy"
@@ -333,7 +333,6 @@ export default function ContactUs() {
                 </p>
               </div>
             </div>
-
           </div>
         </motion.div>
       </section>
