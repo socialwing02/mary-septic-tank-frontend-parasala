@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import heroImg from "../assets/hero.webp";
+import locationImg from "../assets/spHospital.webp"; // or .png / .jpg
 import {
   ArrowRight,
   Check,
@@ -336,6 +337,48 @@ export default function Home() {
 
             <div className="mt-10">
               <PrimaryLink to="/contact">Get in Touch</PrimaryLink>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Nearby / Location */}
+      <section className={`${sectionClass} bg-white`}>
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Image space – replace src with your image */}
+          <motion.div {...reveal("right", 0.2)}>
+            <img
+              src={locationImg} // ← add your image path here (e.g. import locationImg from "../assets/location.webp")
+              alt="Mary Septic Tank near SP Hospital, Parasala"
+              loading="lazy"
+              className="h-[340px] w-full rounded-2xl object-cover bg-gray-100 sm:h-[440px]"
+            />
+            {/* Optional fallback text while no image is set */}
+            {/* <div className="flex h-[340px] w-full items-center justify-center rounded-2xl bg-gray-100 text-gray-400 sm:h-[440px]">
+        Location image
+      </div> */}
+          </motion.div>
+
+          <motion.div {...reveal("left", 0.2)}>
+            <Eyebrow>Our Location</Eyebrow>
+            <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
+              Conveniently located near{" "}
+              <span className="text-emerald-700">SP Hospital, Parasala</span>
+            </h2>
+            <p className="mt-6 text-base leading-8 text-gray-600">
+              Mary Septic Tank is situated near SP Hospital in Parasala, making
+              it easy for residents and businesses in the area to reach us for
+              septic tank cleaning, maintenance, and drainage services.
+            </p>
+            <p className="mt-4 text-base leading-8 text-gray-600">
+              Whether you need routine cleaning or urgent assistance, our nearby
+              presence helps us respond quickly and serve you better.
+            </p>
+
+            <div className="mt-10">
+              <PrimaryLink to="/contact">
+                Get Directions / Contact Us
+              </PrimaryLink>
             </div>
           </motion.div>
         </div>
