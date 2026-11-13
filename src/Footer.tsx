@@ -23,13 +23,12 @@ const headingClass =
 const linkClass =
   "text-sm text-white/60 transition-colors hover:text-emerald-300";
 
-const MAPS_URL = "https://www.google.com/maps/dir/8.2064129,77.3262149/MARY+SEPTIC+TANK+CLEANING,+UNDER+BRIDGE,+bus+stop,+TVM+Rd,+near+PARVATHIPURAM,+PARVATIPURAM,+Nagercoil,+Kaniyakulam,+Tamil+Nadu+629003/@8.2026688,77.3219892,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3b04f138efa16fa3:0x349e5887e52ad583!2m2!1d77.4001926!2d8.1901547?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D"
+const MAPS_URL = "https://www.google.com/maps/place/MARY+SEPTIC+TANK+CLEANING+SERVIES/@8.2785109,77.0703773,11z/data=!4m10!1m2!2m1!1sMARY+SEPTIC+TANK+CLEANING+SERVIES,+Trivandrum+-+Nagercoil+Hwy,+Idichakkaplamoodu,+Parassala,+Keralam+695508!3m6!1s0x3b05ab560e283b11:0xf1751ad59c29a2a0!8m2!3d8.3546952!4d77.1441112!15sCmtNQVJZIFNFUFRJQyBUQU5LIENMRUFOSU5HIFNFUlZJQ0VTLCBUcml2YW5kcnVtIC0gTmFnZXJjb2lsIEh3eSwgSWRpY2hha2thcGxhbW9vZHUsIFBhcmFzc2FsYSwgS2VyYWxhIDY5NTUwOFpnImVtYXJ5IHNlcHRpYyB0YW5rIGNsZWFuaW5nIHNlcnZpY2VzIHRyaXZhbmRydW0gbmFnZXJjb2lsIGh3eSBpZGljaGFra2FwbGFtb29kdSBwYXJhc3NhbGEga2VyYWxhIDY5NTUwOJIBFXNlcHRpY19zeXN0ZW1fc2VydmljZeABAA!16s%2Fg%2F11nvhjyq54?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D"
 
 export default function Footer() {
   return (
     <footer className="bg-[#0f2a24] text-white">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-
         {/* CTA strip */}
         <div className="flex flex-col gap-6 border-b border-white/10 py-12 md:flex-row md:items-center md:justify-between">
           <div>
@@ -62,7 +61,6 @@ export default function Footer() {
 
         {/* Main content */}
         <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-5">
             <Link to="/" className="inline-flex items-center gap-3">
@@ -122,7 +120,6 @@ export default function Footer() {
             <h3 className={headingClass}>Contact</h3>
 
             <div className="mt-5 space-y-5">
-
               {/* Phone */}
               <div>
                 <p className="text-xs text-white/50">Call us</p>
@@ -145,21 +142,17 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="mt-2 flex items-start gap-2 text-sm leading-relaxed text-white/60 transition-colors hover:text-emerald-300"
                 >
-                  <MapPin
-                    size={17}
-                    className="mt-0.5 shrink-0"
-                  />
+                  <MapPin size={17} className="mt-0.5 shrink-0" />
 
                   <span>
-                    TVM Road, Under Bridge,
+                    Trivandrum – Nagercoil Highway,
                     <br />
-                    Near Parvathipuram Bus Stop,
+                    Idichakkapalamoodu,
                     <br />
-                    Parvathipuram.
+                    Parassala, Kerala – 695508
                   </span>
                 </a>
               </div>
-
             </div>
           </div>
         </div>
@@ -170,7 +163,6 @@ export default function Footer() {
             © {new Date().getFullYear()} Mary Septic Care. All rights reserved.
           </p>
         </div>
-
       </div>
     </footer>
   );
