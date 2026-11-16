@@ -1,5 +1,11 @@
 
-import { ArrowUpRight, Droplets, Phone, MapPin } from "lucide-react";
+import {
+  ArrowUpRight,
+  Droplets,
+  Phone,
+  MapPin,
+} from "lucide-react";
+
 import { Link } from "react-router-dom";
 import { PHONE_HREF, PHONE_LABEL } from "./constants";
 
@@ -17,24 +23,37 @@ const services = [
   "Emergency Cleaning",
 ];
 
+const serviceAreas = [
+  "Kaliyakkavilai",
+  "Cheruvarakonam",
+  "Kottamom",
+  "Amaravila",
+  "Kannumamoodu",
+  "Karakonam",
+  "Vellarada",
+];
+
 const headingClass =
   "text-xs font-semibold uppercase tracking-[0.16em] text-white";
 
 const linkClass =
   "text-sm text-white/60 transition-colors hover:text-emerald-300";
 
-const MAPS_URL = "https://www.google.com/maps/place/MARY+SEPTIC+TANK+CLEANING+SERVIES/@8.2785109,77.0703773,11z/data=!4m10!1m2!2m1!1sMARY+SEPTIC+TANK+CLEANING+SERVIES,+Trivandrum+-+Nagercoil+Hwy,+Idichakkaplamoodu,+Parassala,+Keralam+695508!3m6!1s0x3b05ab560e283b11:0xf1751ad59c29a2a0!8m2!3d8.3546952!4d77.1441112!15sCmtNQVJZIFNFUFRJQyBUQU5LIENMRUFOSU5HIFNFUlZJQ0VTLCBUcml2YW5kcnVtIC0gTmFnZXJjb2lsIEh3eSwgSWRpY2hha2thcGxhbW9vZHUsIFBhcmFzc2FsYSwgS2VyYWxhIDY5NTUwOFpnImVtYXJ5IHNlcHRpYyB0YW5rIGNsZWFuaW5nIHNlcnZpY2VzIHRyaXZhbmRydW0gbmFnZXJjb2lsIGh3eSBpZGljaGFra2FwbGFtb29kdSBwYXJhc3NhbGEga2VyYWxhIDY5NTUwOJIBFXNlcHRpY19zeXN0ZW1fc2VydmljZeABAA!16s%2Fg%2F11nvhjyq54?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D"
+const MAPS_URL =
+  "https://www.google.com/maps/place/MARY+SEPTIC+TANK+CLEANING+SERVIES/@8.2785109,77.0703773,11z/data=!4m10!1m2!2m1!1sMARY+SEPTIC+TANK+CLEANING+SERVIES,+Trivandrum+-+Nagercoil+Hwy,+Idichakkaplamoodu,+Parassala,+Keralam+695508!3m6!1s0x3b05ab560e283b11:0xf1751ad59c29a2a0!8m2!3d8.3546952!4d77.1441112!15sCmtNQVJZIFNFUFRJQyBUQU5LIENMRUFOSU5HIFNFUlZJQ0VTLCBUcml2YW5kcnVtIC0gTmFnZXJjb2lsIEh3eSwgSWRpY2hha2thcGxhbW9vZHUsIFBhcmFzc2FsYSwgS2VyYWxhIDY5NTUwOFpnImVtYXJ5IHNlcHRpYyB0YW5rIGNsZWFuaW5nIHNlcnZpY2VzIHRyaXZhbmRydW0gbmFnZXJjb2lsIGh3eSBpZGljaGFra2FwbGFtb29kdSBwYXJhc3NhbGEga2VyYWxhIDY5NTUwOJIBFXNlcHRpY19zeXN0ZW1fc2VydmljZeABAA!16s%2Fg%2F11nvhjyq54?entry=ttu";
 
 export default function Footer() {
   return (
     <footer className="bg-[#0f2a24] text-white">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        {/* CTA strip */}
+
+        {/* CTA Strip */}
         <div className="flex flex-col gap-6 border-b border-white/10 py-12 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
               Clean tanks. Healthy homes.
             </h2>
+
             <p className="mt-2 text-sm text-white/60">
               Reliable septic tank cleaning and maintenance you can count on.
             </p>
@@ -59,10 +78,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Main content */}
+        {/* Main Footer Content */}
         <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+
           {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-5">
+          <div className="sm:col-span-2 lg:col-span-4">
             <Link to="/" className="inline-flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-400 text-[#0f2a24]">
                 <Droplets size={20} strokeWidth={1.8} />
@@ -85,8 +105,11 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick links */}
-          <nav aria-label="Quick links" className="lg:col-span-2">
+          {/* Quick Links */}
+          <nav
+            aria-label="Quick links"
+            className="lg:col-span-2"
+          >
             <h3 className={headingClass}>Quick Links</h3>
 
             <ul className="mt-5 space-y-3">
@@ -101,7 +124,7 @@ export default function Footer() {
           </nav>
 
           {/* Services */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h3 className={headingClass}>Our Services</h3>
 
             <ul className="mt-5 space-y-3">
@@ -115,14 +138,43 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Service Areas */}
+          <div className="lg:col-span-2">
+            <h3 className={headingClass}>Service Areas</h3>
+
+            <ul className="mt-5 space-y-3">
+              {serviceAreas.map((place) => (
+                <li key={place}>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                      `${place}, Tamil Nadu, India`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${linkClass} inline-flex items-center gap-2`}
+                  >
+                    <MapPin
+                      size={14}
+                      className="shrink-0 text-emerald-400"
+                    />
+                    {place}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact and Address */}
           <div className="lg:col-span-2">
             <h3 className={headingClass}>Contact</h3>
 
             <div className="mt-5 space-y-5">
+
               {/* Phone */}
               <div>
-                <p className="text-xs text-white/50">Call us</p>
+                <p className="text-xs text-white/50">
+                  Call us
+                </p>
 
                 <a
                   href={PHONE_HREF}
@@ -134,7 +186,9 @@ export default function Footer() {
 
               {/* Address */}
               <div>
-                <p className="text-xs text-white/50">Our Location</p>
+                <p className="text-xs text-white/50">
+                  Our Location
+                </p>
 
                 <a
                   href={MAPS_URL}
@@ -142,7 +196,10 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="mt-2 flex items-start gap-2 text-sm leading-relaxed text-white/60 transition-colors hover:text-emerald-300"
                 >
-                  <MapPin size={17} className="mt-0.5 shrink-0" />
+                  <MapPin
+                    size={17}
+                    className="mt-0.5 shrink-0"
+                  />
 
                   <span>
                     Trivandrum – Nagercoil Highway,
@@ -157,12 +214,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Bottom Bar */}
         <div className="border-t border-white/10 py-6 text-center sm:text-left">
           <p className="text-xs text-white/50">
-            © {new Date().getFullYear()} Mary Septic Care. All rights reserved.
+            © {new Date().getFullYear()} Mary Septic Care.
+            All rights reserved.
           </p>
         </div>
+
       </div>
     </footer>
   );
