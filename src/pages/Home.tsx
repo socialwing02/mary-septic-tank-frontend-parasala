@@ -7,6 +7,7 @@ import {
   Check,
   Droplets,
   Layers3,
+  MapPin,
   ShieldCheck,
   TruckIcon,
   Users,
@@ -22,6 +23,16 @@ const IMAGES = {
   about: aboutImg,
   why: whyUsImg,
 };
+
+const serviceAreas = [
+    "Kaliyakkavilai",
+  "Cheruvarakonam",
+  "Kottamom",
+  "Amaravila",
+  "Kannumamoodu",
+  "Karakonam",
+  "Vellarada",
+];
 
 /* ---------- Content ---------- */
 const aboutPoints = [
@@ -290,6 +301,90 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+{/* Areas We Serve */}
+<section
+  id="service-areas"
+  className={`${sectionClass} bg-gray-50`}
+>
+  <div className="mx-auto max-w-7xl">
+
+    {/* Section Heading */}
+    <motion.div
+      {...reveal("up", 0.1)}
+      className="mx-auto max-w-2xl text-center"
+    >
+      <Eyebrow>Our Service Locations</Eyebrow>
+
+      <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
+        Areas We{" "}
+        <span className="text-emerald-700">
+          Serve
+        </span>
+      </h2>
+
+      <p className="mt-5 text-base leading-8 text-gray-600">
+        Mary Septic Tank provides reliable septic tank
+        cleaning and sanitation services across multiple
+        locations. Contact us for professional service
+        at your doorstep.
+      </p>
+    </motion.div>
+
+    {/* Locations Grid */}
+    <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {serviceAreas.map((place, i) => (
+        <motion.a
+          key={place}
+          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            place + ", Tamil Nadu, India"
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...reveal("up", 0.1 + i * 0.05)}
+          className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400 hover:shadow-md"
+        >
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
+            <MapPin size={22} />
+          </span>
+
+          <div className="min-w-0 flex-1">
+            <h3 className="font-semibold text-gray-900">
+              {place}
+            </h3>
+
+            <p className="mt-1 text-sm text-gray-500">
+              Septic Tank Cleaning Services
+            </p>
+          </div>
+
+          <ArrowRight
+            size={18}
+            className="shrink-0 text-gray-400 transition-all group-hover:translate-x-1 group-hover:text-emerald-600"
+          />
+        </motion.a>
+      ))}
+    </div>
+
+    {/* CTA */}
+    <motion.div
+      {...reveal("up", 0.2)}
+      className="mt-12 text-center"
+    >
+      <p className="mb-5 text-sm text-gray-600">
+        Don't see your location? Contact us to check
+        service availability.
+      </p>
+
+      <PrimaryLink to="/contact">
+        Contact Us
+        <ArrowRight size={16} />
+      </PrimaryLink>
+    </motion.div>
+
+  </div>
+</section>
+
 
       {/* Why choose us */}
       <section className={`${sectionClass} bg-gray-50`}>
