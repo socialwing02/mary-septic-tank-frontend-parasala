@@ -74,18 +74,20 @@ export default function About() {
       <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden sm:min-h-[320px]">
         <img
           src={IMAGES.banner}
-          alt="Mary Septic Tank sanitation services"
+          alt="Mary Septic Tank Cleaning in Parasala Kerala"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[#0f2a24]/75" />
 
         <div className="relative z-10 px-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            About Us
+            About Mary Septic Tank Cleaning in Parasala
           </h1>
+
           <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/80">
-            Committed to cleaner surroundings and dependable sanitation
-            services.
+            Learn about Mary Septic Tank Cleaning and our commitment to
+            dependable sanitation services, septic tank cleaning, and hygienic
+            surroundings in Parasala, Kerala.
           </p>
         </div>
       </section>
@@ -96,29 +98,28 @@ export default function About() {
           <motion.div {...reveal("right", 0.2)}>
             <Eyebrow>Who We Are</Eyebrow>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-              Dedicated to a{" "}
-              <span className="text-emerald-700">
-                cleaner, healthier environment
-              </span>
+              Septic Tank Cleaning in{" "}
+              <span className="text-emerald-700">Parasala</span>
             </h2>
             <p className="mt-6 text-base leading-8 text-gray-600">
-              Mary Septic Tank helps homes and businesses maintain clean and
-              hygienic surroundings through dependable septic tank and
-              sanitation services. We understand the importance of maintaining
-              sanitation systems and addressing problems before they become more
-              serious.
+              Mary Septic Tank Cleaning provides septic tank cleaning and
+              sanitation services for residential and commercial properties. We
+              help customers in Parasala maintain hygienic surroundings through
+              septic tank cleaning, septic tank waste removal, and proper
+              sanitation practices.
             </p>
             <p className="mt-4 text-base leading-8 text-gray-600">
-              Our goal is to make septic tank cleaning and maintenance
-              straightforward, with a focus on reliable service, customer
-              satisfaction, and responsible sanitation practices.
+              Our focus is on dependable service, customer satisfaction, and
+              responsible septic tank maintenance. We aim to make sanitation
+              services accessible and straightforward for customers looking for
+              septic tank cleaning in Parasala and nearby areas.
             </p>
           </motion.div>
 
           <motion.div {...reveal("left", 0.2)}>
             <img
               src={IMAGES.story}
-              alt="Mary Septic Tank team at work"
+              alt="Septic tank cleaning and sanitation services by Mary"
               loading="lazy"
               className="h-[320px] w-full rounded-2xl object-cover sm:h-[440px]"
             />
@@ -171,7 +172,7 @@ export default function About() {
           <motion.div {...reveal("right", 0.2)}>
             <img
               src={IMAGES.why}
-              alt="Professional septic tank cleaning and maintenance"
+              alt="Septic tank cleaning and maintenance services"
               loading="lazy"
               className="h-[320px] w-full rounded-2xl object-cover sm:h-[440px]"
             />
@@ -180,15 +181,15 @@ export default function About() {
           <motion.div {...reveal("left", 0.2)}>
             <Eyebrow>Why Choose Us</Eyebrow>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-              Sanitation services you can{" "}
-              <span className="text-emerald-700">depend on</span>
+              Why Choose Mary Septic Tank Cleaning?
             </h2>
             <p className="mt-6 text-base leading-8 text-gray-600">
-              A dependable sanitation service helps you maintain hygiene and
-              manage septic tank issues effectively, with practical service and
-              clear communication.
+              Choosing the right septic tank cleaning service is important for
+              maintaining hygiene and preventing sanitation problems. Mary
+              Septic Tank Cleaning focuses on dependable service, practical
+              solutions, and customer satisfaction for septic tank cleaning
+              requirements in Parasala.
             </p>
-
             <ul className="mt-8 space-y-5">
               {reasons.map((item) => (
                 <li key={item.title} className="flex gap-4">

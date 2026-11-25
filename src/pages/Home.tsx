@@ -25,15 +25,14 @@ const IMAGES = {
 };
 
 const serviceAreas = [
-    "Kaliyakkavilai",
-  "Cheruvarakonam",
-  "Kottamom",
-  "Amaravila",
-  "Kannumamoodu",
-  "Karakonam",
-  "Vellarada",
+  { name: "Kaliyakkavilai", state: "Tamil Nadu" },
+  { name: "Cheruvarakonam", state: "Kerala" },
+  { name: "Kottamom", state: "Kerala" },
+  { name: "Amaravila", state: "Kerala" },
+  { name: "Kannumamoodu", state: "Kerala" },
+  { name: "Karakonam", state: "Kerala" },
+  { name: "Vellarada", state: "Kerala" },
 ];
-
 /* ---------- Content ---------- */
 const aboutPoints = [
   {
@@ -58,45 +57,37 @@ const services = [
     icon: TruckIcon,
     title: "Septic Tank Cleaning",
     description:
-      "Professional cleaning and desludging to keep your sanitation system working efficiently.",
+      "Professional septic tank cleaning and desludging services in Parasala to help maintain clean and hygienic surroundings.",
     features: [
-      "Safe & hygienic cleaning",
-      "Modern vacuum tankers",
-      "Residential & commercial",
+      "Safe and hygienic cleaning",
+      "Residential and commercial services",
+      "Reliable cleaning solutions",
     ],
   },
   {
     icon: Wrench,
     title: "Septic Tank Maintenance",
     description:
-      "Routine maintenance to help prevent blockages, unpleasant odours, and costly repairs.",
-    features: [
-      "Regular inspections",
-      "Blockage prevention",
-      "Longer system lifespan",
-    ],
+      "Septic tank maintenance services to help prevent blockages, unpleasant odours and sanitation problems.",
+    features: ["Routine maintenance", "Blockage prevention", "System care"],
   },
   {
     icon: Layers3,
-    title: "Septic Tank Installation",
+    title: "Septic Tank Waste Removal",
     description:
-      "Practical installation solutions for residential and commercial properties.",
+      "Septic waste removal services to help maintain proper sanitation and cleaner surroundings.",
     features: [
-      "Custom solutions",
-      "Durable systems",
-      "Standards-conscious work",
+      "Septic waste removal",
+      "Hygienic handling",
+      "Service availability in Parasala",
     ],
   },
   {
     icon: Droplets,
     title: "Drainage Cleaning",
     description:
-      "Drain and pipeline cleaning to help maintain smooth water flow and better hygiene.",
-    features: [
-      "High-pressure cleaning",
-      "Blockage removal",
-      "Improved water flow",
-    ],
+      "Drainage and pipeline cleaning services to help maintain smooth water flow and better hygiene.",
+    features: ["Drain cleaning", "Blockage removal", "Improved water flow"],
   },
 ];
 
@@ -159,7 +150,9 @@ export default function Home() {
           <motion.div {...reveal("right", 0.2)} className="order-2 lg:order-1">
             <img
               src={IMAGES.hero}
-              alt="Mary Septic Tank services"
+              alt="Professional septic tank cleaning services in Parasala"
+              fetchPriority="high"
+              decoding="async"
               className="h-[320px] w-full rounded-2xl object-cover sm:h-[420px] lg:h-[500px]"
             />
           </motion.div>
@@ -167,10 +160,7 @@ export default function Home() {
           <motion.div {...reveal("left", 0.2)} className="order-1 lg:order-2">
             <Eyebrow>Reliable Septic Tank Services</Eyebrow>
             <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl">
-              Trusted septic tank solutions for a{" "}
-              <span className="text-emerald-700">
-                cleaner, healthier environment
-              </span>
+              Professional Septic Tank Cleaning Services in Parasala
             </h1>
             <p className="mt-6 max-w-xl text-base leading-8 text-gray-600">
               Mary Septic Tank provides dependable septic tank cleaning,
@@ -196,7 +186,7 @@ export default function Home() {
           <motion.div {...reveal("right", 0.2)}>
             <img
               src={IMAGES.about}
-              alt="Professional septic tank cleaning service"
+              alt="Mary Septic Tank Cleaning services in Parasala"
               loading="lazy"
               className="h-[340px] w-full rounded-xl object-contain sm:h-[440px]"
             />
@@ -205,14 +195,12 @@ export default function Home() {
           <motion.div {...reveal("left", 0.2)}>
             <Eyebrow>About Us</Eyebrow>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-              Your trusted partner in{" "}
-              <span className="text-emerald-700">septic tank solutions</span>
+              Septic Tank Cleaning in Parasala
             </h2>
             <p className="mt-6 text-base leading-8 text-gray-600">
-              We provide dependable sanitation services for homes and
-              businesses, helping customers maintain clean and hygienic
-              surroundings through septic tank cleaning, maintenance, and
-              drainage solutions.
+              Mary Septic Tank Cleaning provides professional septic tank
+              cleaning services in Parasala, including septic waste removal and
+              maintenance solutions for residential and commercial properties.
             </p>
             <p className="mt-4 text-base leading-8 text-gray-600">
               Our focus is on reliable service, customer satisfaction, and
@@ -249,8 +237,7 @@ export default function Home() {
           >
             <Eyebrow>Our Services</Eyebrow>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-              Reliable septic tank services for a{" "}
-              <span className="text-emerald-700">cleaner tomorrow</span>
+              Septic Tank Cleaning Services
             </h2>
             <p className="mt-5 text-base leading-8 text-gray-600">
               Dependable sanitation and septic tank services for homes and
@@ -301,90 +288,74 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-{/* Areas We Serve */}
-<section
-  id="service-areas"
-  className={`${sectionClass} bg-gray-50`}
->
-  <div className="mx-auto max-w-7xl">
 
-    {/* Section Heading */}
-    <motion.div
-      {...reveal("up", 0.1)}
-      className="mx-auto max-w-2xl text-center"
-    >
-      <Eyebrow>Our Service Locations</Eyebrow>
+      {/* Areas We Serve */}
+      <section id="service-areas" className={`${sectionClass} bg-gray-50`}>
+        <div className="mx-auto max-w-7xl">
+          {/* Section Heading */}
+          <motion.div
+            {...reveal("up", 0.1)}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <Eyebrow>Our Service Locations</Eyebrow>
 
-      <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-        Areas We{" "}
-        <span className="text-emerald-700">
-          Serve
-        </span>
-      </h2>
+            <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
+              Areas We Serve
+            </h2>
 
-      <p className="mt-5 text-base leading-8 text-gray-600">
-        Mary Septic Tank provides reliable septic tank
-        cleaning and sanitation services across multiple
-        locations. Contact us for professional service
-        at your doorstep.
-      </p>
-    </motion.div>
-
-    {/* Locations Grid */}
-    <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {serviceAreas.map((place, i) => (
-        <motion.a
-          key={place}
-          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-            place + ", Tamil Nadu, India"
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          {...reveal("up", 0.1 + i * 0.05)}
-          className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400 hover:shadow-md"
-        >
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
-            <MapPin size={22} />
-          </span>
-
-          <div className="min-w-0 flex-1">
-            <h3 className="font-semibold text-gray-900">
-              {place}
-            </h3>
-
-            <p className="mt-1 text-sm text-gray-500">
-              Septic Tank Cleaning Services
+            <p className="mt-5 text-base leading-8 text-gray-600">
+              Mary Septic Tank provides reliable septic tank cleaning and
+              sanitation services across multiple locations. Contact us for
+              professional service at your doorstep.
             </p>
+          </motion.div>
+
+          {/* Locations Grid */}
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {serviceAreas.map((place, i) => (
+              <motion.a
+                key={place.name}
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                  `${place.name}, ${place.state}, India`,
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...reveal("up", 0.1 + i * 0.05)}
+                className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400 hover:shadow-md"
+              >
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
+                  <MapPin size={22} />
+                </span>
+
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-semibold text-gray-900">{place.name}</h3>
+
+                  <p className="mt-1 text-sm text-gray-500">
+                    Septic Tank Cleaning Services
+                  </p>
+                </div>
+
+                <ArrowRight
+                  size={18}
+                  className="shrink-0 text-gray-400 transition-all group-hover:translate-x-1 group-hover:text-emerald-600"
+                />
+              </motion.a>
+            ))}
           </div>
 
-          <ArrowRight
-            size={18}
-            className="shrink-0 text-gray-400 transition-all group-hover:translate-x-1 group-hover:text-emerald-600"
-          />
-        </motion.a>
-      ))}
-    </div>
+          {/* CTA */}
+          <motion.div {...reveal("up", 0.2)} className="mt-12 text-center">
+            <p className="mb-5 text-sm text-gray-600">
+              Don't see your location? Contact us to check service availability.
+            </p>
 
-    {/* CTA */}
-    <motion.div
-      {...reveal("up", 0.2)}
-      className="mt-12 text-center"
-    >
-      <p className="mb-5 text-sm text-gray-600">
-        Don't see your location? Contact us to check
-        service availability.
-      </p>
-
-      <PrimaryLink to="/contact">
-        Contact Us
-        <ArrowRight size={16} />
-      </PrimaryLink>
-    </motion.div>
-
-  </div>
-</section>
-
+            <PrimaryLink to="/contact">
+              Contact Us
+              <ArrowRight size={16} />
+            </PrimaryLink>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Why choose us */}
       <section className={`${sectionClass} bg-gray-50`}>
@@ -392,7 +363,7 @@ export default function Home() {
           <motion.div {...reveal("right", 0.2)}>
             <img
               src={IMAGES.why}
-              alt="Professional sanitation and septic tank services"
+              alt="Septic tank maintenance and sanitation services"
               loading="lazy"
               className="h-[340px] w-full rounded-2xl object-cover sm:h-[440px]"
             />
@@ -401,15 +372,12 @@ export default function Home() {
           <motion.div {...reveal("left", 0.2)}>
             <Eyebrow>Why Mary Septic Tank</Eyebrow>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-              Helping you maintain a{" "}
-              <span className="text-emerald-700">
-                cleaner, healthier environment
-              </span>
+              Why Choose Mary Septic Tank Cleaning?
             </h2>
             <p className="mt-6 text-base leading-8 text-gray-600">
-              Proper sanitation protects your property. Our goal is to make
-              septic tank and drainage services convenient, dependable, and
-              straightforward.
+              Mary Septic Tank Cleaning serves customers in Parasala, Kerala,
+              providing septic tank cleaning, waste removal and maintenance
+              services for residential and commercial properties.
             </p>
 
             <ul className="mt-8 space-y-5">
@@ -437,28 +405,84 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Frequently Asked Questions */}
+      <section id="faq" className={`${sectionClass} bg-white`}>
+        <div className="mx-auto max-w-4xl">
+          <motion.div {...reveal("up", 0.1)} className="text-center">
+            <Eyebrow>Common Questions</Eyebrow>
+
+            <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+
+            <p className="mt-4 text-base leading-8 text-gray-600">
+              Find answers to common questions about septic tank cleaning
+              services in Parasala.
+            </p>
+          </motion.div>
+
+          <div className="mt-10 space-y-5">
+            {[
+              {
+                question: "Do you provide septic tank cleaning in Parasala?",
+                answer:
+                  "Yes, Mary Septic Tank Cleaning provides septic tank cleaning services in Parasala. Contact us to confirm availability at your location.",
+              },
+              {
+                question: "What septic tank services do you provide?",
+                answer:
+                  "We provide septic tank cleaning, septic waste removal and maintenance services, subject to service availability.",
+              },
+              {
+                question: "How often should a septic tank be cleaned?",
+                answer:
+                  "Cleaning frequency depends on tank size, usage and system condition. Contact a professional for advice based on your requirements.",
+              },
+              {
+                question: "Do you provide septic tank cleaning near me?",
+                answer:
+                  "Contact Mary Septic Tank Cleaning with your location to check whether our services are available in your area.",
+              },
+              {
+                question: "How can I book a septic tank cleaning service?",
+                answer:
+                  "You can contact our team through the website contact page to discuss your requirements and arrange a service.",
+              },
+            ].map((faq, index) => (
+              <motion.article
+                key={faq.question}
+                {...reveal("up", 0.1 + index * 0.05)}
+                className="rounded-xl border border-gray-200 p-6"
+              >
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {faq.question}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-gray-600">
+                  {faq.answer}
+                </p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Nearby / Location */}
       <section className={`${sectionClass} bg-white`}>
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Image space – replace src with your image */}
           <motion.div {...reveal("right", 0.2)}>
             <img
               src={locationImg} // ← add your image path here (e.g. import locationImg from "../assets/location.webp")
-              alt="Mary Septic Tank near SP Hospital, Parasala"
+              alt="Mary Septic Tank Cleaning location near SP Hospital in Parasala"
               loading="lazy"
               className="h-[340px] w-full rounded-2xl object-cover bg-gray-100 sm:h-[440px]"
             />
-            {/* Optional fallback text while no image is set */}
-            {/* <div className="flex h-[340px] w-full items-center justify-center rounded-2xl bg-gray-100 text-gray-400 sm:h-[440px]">
-        Location image
-      </div> */}
           </motion.div>
 
           <motion.div {...reveal("left", 0.2)}>
             <Eyebrow>Our Location</Eyebrow>
             <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-              Conveniently located near{" "}
-              <span className="text-emerald-700">SP Hospital, Parasala</span>
+              Septic Tank Cleaning Services in Parasala, Kerala
             </h2>
             <p className="mt-6 text-base leading-8 text-gray-600">
               Mary Septic Tank is situated near SP Hospital in Parasala, making
@@ -484,7 +508,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-2xl font-bold text-white sm:text-3xl">
-              Need help with your septic tank?
+              Contact Mary Septic Tank Cleaning
             </h2>
             <p className="mt-2 max-w-xl text-sm leading-7 text-white/70">
               Get in touch to discuss your cleaning, maintenance, or drainage
